@@ -1,0 +1,86 @@
+body {
+box-sizing: border-box;
+display: flex;
+flex-wrap: wrap;
+}
+.container {
+box-sizing: border-box;
+width: 400px;
+border: solid 1px black;
+border-radius: 10px;
+background-color: gainsboro;
+background-image: linear-gradient(to bottom right, gainsboro, white);
+padding: 1em;
+}
+.city-container {
+    padding-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: auto;
+    grid-template-areas:    "kuva otsikko"
+                            "kuva teksti";
+}
+.heading {
+    grid-area: otsikko;
+    padding-bottom: 0.5rem;
+}
+.image {
+    grid-area: kuva;
+    grid-row: 1 / span 2;
+}
+.text {
+    grid-area: teksti;
+}
+.city-container .image img {
+    padding: 5px;
+    border-left: solid 1px lightgray;
+    border-top: solid 1px lightgray;
+    border-right: solid 1px darkgray;
+    border-bottom: solid 1px darkgray;
+    background-color: white;
+    box-shadow: 3px 3px 0px 0px darkgray;
+    max-width: 100%;
+}
+.city-container .heading h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.city-container .text p {
+    font-size: 0.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.reverse {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto;
+    grid-template-areas:    "otsikko2 kuva2"
+                            "teksti2 kuva2";
+}
+.reverse .heading {
+    grid-area: otsikko2;
+}
+.reverse .text {
+    grid-area: teksti2;
+}
+.reverse .image {
+    display: grid;
+    justify-content: end;
+    grid-area: kuva2;
+    grid-row: 1 / span 2;
+}
+
+/* Mobiili-näkymän css-säännöt. */
+@media only screen and (max-width: 425px) {
+    body {
+        margin: 0;
+    }
+    .container {
+        width: 100%;
+        min-width: 320px;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+}
